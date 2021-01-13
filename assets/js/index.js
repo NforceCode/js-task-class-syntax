@@ -44,6 +44,10 @@ class RangeValidator {
     }
     this._to = value;
   }
+
+  get range () {
+    return [this._from, this._to];
+  }
 }
 
 const data = new RangeValidator(1,10);
