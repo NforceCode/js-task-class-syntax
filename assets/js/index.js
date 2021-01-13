@@ -36,7 +36,7 @@ class RangeValidator {
 
   set to (value) {
     if(typeof value !== 'number') {
-      throw new TypeError('from parameter must be numeric');
+      throw new TypeError('to parameter must be numeric');
     }
 
     if (typeof this._from !== 'undefined' && this._from > value) {
