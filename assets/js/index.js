@@ -48,6 +48,18 @@ class RangeValidator {
   get range () {
     return [this._from, this._to];
   }
+
+  validate(number) {
+    if(typeof number !== 'number') {
+      throw new TypeError('Inputted parameter must be numeric');
+    }
+
+    if(number >= this._from && number <= this._to) {
+      return number
+    } else { 
+      throw new RangeError (`${number} is not in range from ${this._from} to ${this._to}`);
+    }
+  }  
 }
 
 const data = new RangeValidator(1,10);
